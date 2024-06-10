@@ -1,23 +1,70 @@
-﻿@model IEnumerable<intprogödev.Models.OgrenciDers>
+@model IEnumerable<intprogödev.Models.OgrenciDers>
 
-<form asp-controller="OdSecim" asp-action="Index" method="post">
-    <div class="form-group">
-        <label for="ogrenciId">Öğrenci Seçin:</label>
-        <select class="form-control" id="ogrenciId" name="ogrenciId">
-            @foreach (var ogrenci in ViewBag.Ogrenciler)
-            {
-                <option value="@ogrenci.Id">@ogrenci.AdSoyad</option>
-            }
-        </select>
+@{
+    ViewData["Title"] = "Ders Seçimi";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="OdSecim" asp-action="Index" method="post" class="form-horizontal">
+    <div class="form-group row">
+        <label for="ogrenciId" class="col-sm-2 col-form-label">Öğrenci Seçin:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="ogrenciId" name="ogrenciId">
+                <option value="">-- Öğrenci Seçin --</option>
+                @foreach (var ogrenci in ViewBag.Ogrenciler)
+                {
+                    <option value="@ogrenci.Id">@ogrenci.AdSoyad</option>
+                }
+            </select>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="dersId">Ders Seçin:</label>
-        <select class="form-control" id="dersId" name="dersId">
-            @foreach (var ders in ViewBag.Dersler)
-            {
-                <option value="@ders.Id">@ders.DersAdi</option>
-            }
-        </select>
+    <div class="form-group row">
+        <label for="dersId" class="col-sm-2 col-form-label">Ders Seçin:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="dersId" name="dersId">
+                <option value="">-- Ders Seçin --</option>
+                @foreach (var ders in ViewBag.Dersler)
+                {
+                    <option value="@ders.Id">@ders.DersAdi</option>
+                }
+            </select>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
 </form>
+
+<h2>Öğrenci Listesi</h2>
+<a asp-action="AddOgrenci" asp-controller="Ogrenci" class="btn btn-outline-primary mb-3">Öğrenci Ekleme</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Numara</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Öğrenci İşlemleri</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Ogrenciler)
+        {
+            <tr>
+                <td>@item.Numara</td>
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+                <td>
+                    <a asp-controller="OdSecim" asp-action="Index" asp-route-id="@item.Id" class="btn btn-warning">Ders</a>
+                </td>
+                <td>
+                    <a asp-action="EditOgrenci" asp-route-id="@item.Id" class="btn btn-warning">Güncelle</a>
+                    <a asp-action="DeleteStudent" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
