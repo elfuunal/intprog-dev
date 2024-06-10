@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Gazi Üniversitesi</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Gazi Üniversitesi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownListeler" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Listeler
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownListeler">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Ogrenci")">Öğrenci Listesi</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Ders")">Dersler Listesi</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownIslemler" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlemler
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownIslemler">
+                            <a class="dropdown-item" href="@Url.Action("AddOgrenci", "Ogrenci")">Öğrenci Ekleme</a>
+                            <a class="dropdown-item" href="@Url.Action("EditOgrenci", "Ogrenci")">Öğrenci Güncelleme</a>
+                            <a class="dropdown-item" href="@Url.Action("AddDers", "Ders")">Ders Ekleme</a>
+                            <a class="dropdown-item" href="@Url.Action("EditDers", "Ders")">Ders Güncelleme</a>
+                            <a class="dropdown-item" href="@Url.Action("DersSecim", "Odsecim")">Ders Seçimi</a>
+
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

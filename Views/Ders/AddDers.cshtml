@@ -1,0 +1,25 @@
+﻿@model Ders
+@{
+    ViewData["Title"] = "AddDers";
+}
+
+<h1 style="text-align: center; color: darkred;">Ders Ekleme Sayfası</h1>
+<div style="text-align: center;">
+    <form asp-action="AddDers" asp-controller="Ders" method="post" style="max-width: 400px; margin: 0 auto;">
+        <div style="margin-bottom: 10px;">
+            <label for="Dersad" style="color: grey; font-weight: bold; display: block;">Ders Adı:</label>
+            <input asp-for="DersAdi" id="DersAdi" style="margin-top: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 3px; display: block; width: 100%;" />
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="DersKod" style="color: grey; font-weight: bold; display: block;">Ders Kodu:</label>
+            <input asp-for="DersKodu" id="DersKodu" style="margin-top: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 3px; display: block; width: 100%;" />
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="Kredi" style="color: grey; font-weight: bold; display: block;">Kredi:</label>
+            <input asp-for="Kredi" id="Kredi" style="margin-top: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 3px; display: block; width: 100%;" />
+        </div>
+        <input asp-for="Id" type="hidden" />
+
+        <input type="submit" value="Kaydet" style="background-color: darkslateblue; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; display: block; margin-top: 20px; margin-bottom: 20px;" />
+    </form>
+</div>

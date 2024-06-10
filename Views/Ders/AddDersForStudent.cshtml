@@ -1,0 +1,22 @@
+﻿@model intprogödev.Models.Ders
+
+@{
+    ViewData["Title"] = "Ders Ekle";
+}
+
+<h1>Ders Ekle</h1>
+
+<form asp-action="AddDersForStudent">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="DersAdi" class="control-label"></label>
+        <input asp-for="DersAdi" class="form-control" />
+        <span asp-validation-for="DersAdi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DersKodu" class="control-label"></label>
+        <input asp-for="DersKodu" class="form-control" />
+        <span asp-validation-for="DersKodu" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>

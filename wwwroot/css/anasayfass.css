@@ -1,0 +1,49 @@
+﻿
+/* Container styles */
+.container {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+ 
+}
+
+/* Typography styles */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Button styles */
+button {
+    padding: 10px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    button:hover {
+        background-color:brown;
+    }
+
+/* Duplicate button styles (consolidated) */
+.btn-custom {
+    margin: 0 5px;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }

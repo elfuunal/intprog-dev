@@ -1,0 +1,23 @@
+﻿@model IEnumerable<intprogödev.Models.OgrenciDers>
+
+<form asp-controller="OdSecim" asp-action="Index" method="post">
+    <div class="form-group">
+        <label for="ogrenciId">Öğrenci Seçin:</label>
+        <select class="form-control" id="ogrenciId" name="ogrenciId">
+            @foreach (var ogrenci in ViewBag.Ogrenciler)
+            {
+                <option value="@ogrenci.Id">@ogrenci.AdSoyad</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="dersId">Ders Seçin:</label>
+        <select class="form-control" id="dersId" name="dersId">
+            @foreach (var ders in ViewBag.Dersler)
+            {
+                <option value="@ders.Id">@ders.DersAdi</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

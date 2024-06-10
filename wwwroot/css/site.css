@@ -1,0 +1,99 @@
+/* Özel stil eklemeleri */
+.table-custom {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+    .table-custom thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .table-custom th, .table-custom td {
+        border: none;
+        padding: 15px;
+        vertical-align: middle;
+    }
+
+    .table-custom tr {
+        background-color: #f8f9fa;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .table-custom tr:hover {
+            background-color: #e9ecef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    .table-custom th:first-child, .table-custom td:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .table-custom th:last-child, .table-custom td:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+/* Button styles */
+.btn-custom {
+    margin: 0 5px;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+/* Navbar custom styles */
+.navbar-custom {
+    background-color: #343a40;
+    border-bottom: 3px solid #007bff;
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in-out;
+}
+
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff !important;
+    }
+
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .dropdown-menu .dropdown-item {
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+/* Button styles */
+.btn-custom {
+    margin: 0 5px;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
